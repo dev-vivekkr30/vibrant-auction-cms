@@ -38,7 +38,7 @@ class CustomSidebar extends HTMLElement {
                                     <li><a href="faq.html"><span class="text">FAQ</span></a></li>
                                     <li><a href="contact.html"><span class="text">Contact Us</span></a></li>
                                     <li><a href="propertyRequest.html"><span class="text">Property Request</span></a></li>
-                                    <li><a href="contact.html"><span class="text">Contact Us</span></a></li>
+                                    <li><a href="enquiry.html"><span class="text">Enquiry</span></a></li>
                                 </ul>
                             </li>
                             <li><a href="aboutCompany.html"><i class="bi bi-receipt-cutoff"></i><span class="text">About Company</span></a></li>
