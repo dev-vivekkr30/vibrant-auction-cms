@@ -1,56 +1,49 @@
-// Toggle New Password Field
-const newPasswordInput = document.getElementById('newPassword');
-const toggleNewPassword = document.getElementById('toggleNewPassword');
-const toggleNewIcon = document.getElementById('toggleNewIcon');
+// active in-active toggle switch
+const toggleSwitches = document.querySelectorAll('.toggle-switch');
 
-toggleNewPassword.addEventListener('click', function () {
-    const type = newPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-    newPasswordInput.setAttribute('type', type);
-    toggleNewIcon.classList.toggle('bi-eye');
-    toggleNewIcon.classList.toggle('bi-eye-slash');
+toggleSwitches.forEach(toggleSwitch => {
+  const toggleLabel = toggleSwitch.querySelector('.toggle-label');
+  const toggleThumb = toggleSwitch.querySelector('.toggle-thumb');
+
+  toggleSwitch.addEventListener('click', () => {
+    toggleSwitch.classList.toggle('verified');
+    toggleSwitch.classList.toggle('rejected');
+
+    if (toggleSwitch.classList.contains('verified')) {
+      toggleSwitch.style.backgroundColor = '#4CAF50'; // green
+      toggleThumb.style.left = '60px'; // move thumb right
+      toggleLabel.textContent = 'Active';
+      toggleLabel.style.marginLeft = '0';
+      toggleLabel.style.marginRight = '16px';
+    } else {
+      toggleSwitch.style.backgroundColor = '#f44336'; // red
+      toggleThumb.style.left = '5px'; // move thumb left
+      toggleLabel.textContent = 'Inactive';
+      toggleLabel.style.marginRight = '0';
+      toggleLabel.style.marginLeft = '16px';
+    }
+  });
 });
 
-// Toggle Confirm Password Field
-const confirmPasswordInput = document.getElementById('confirmPassword');
-const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-const toggleConfirmIcon = document.getElementById('toggleConfirmIcon');
 
-toggleConfirmPassword.addEventListener('click', function () {
-    const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-    confirmPasswordInput.setAttribute('type', type);
-    toggleConfirmIcon.classList.toggle('bi-eye');
-    toggleConfirmIcon.classList.toggle('bi-eye-slash');
-});
+// password Hide & Show 
 
-// Validation on Form Submit
-const form = document.getElementById('passwordForm');
-const newPasswordError = document.getElementById('newPasswordError');
-const confirmPasswordError = document.getElementById('confirmPasswordError');
+const togglePasswordButtons = document.querySelectorAll('.toggle-password');
 
-form.addEventListener('submit', function (event) {
-    // Prevent form submission to validate
-    event.preventDefault();
+togglePasswordButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.getAttribute('data-target');
+    const passwordInput = document.getElementById(targetId);
+    const icon = button.querySelector('i');
 
-    let isValid = true;
-
-    // Check if New Password is at least 8 characters long
-    if (newPasswordInput.value.length < 8) {
-        newPasswordError.style.display = 'block';
-        isValid = false;
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      icon.classList.remove('bi-eye-slash');
+      icon.classList.add('bi-eye');
     } else {
-        newPasswordError.style.display = 'none';
+      passwordInput.type = 'password';
+      icon.classList.remove('bi-eye');
+      icon.classList.add('bi-eye-slash');
     }
-
-    // Check if both passwords match
-    if (newPasswordInput.value !== confirmPasswordInput.value) {
-        confirmPasswordError.style.display = 'block';
-        isValid = false;
-    } else {
-        confirmPasswordError.style.display = 'none';
-    }
-
-    // Submit form if all validations pass
-    if (isValid) {
-        form.submit();
-    }
+  });
 });

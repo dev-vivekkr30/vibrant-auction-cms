@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Management</title>
+    <title>Add Property | Vibrant Auction</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -38,7 +38,8 @@
                                 <i class="bi bi-chevron-down ms-3"></i>
                             </div>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-eye-slash"></i> Change
+                                        Password</a></li>
                                 <li><a class="dropdown-item" href="#"><i
                                             class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
                             </ul>
@@ -48,10 +49,10 @@
 
 
                 <div class="dataOverviewSection mt-3">
-                    <div class="dataOverview mt-3">
-                        <h6 class="m-0">Add New Property</h6>
-                        <hr class="m-0 mt-2 mb-2">
-                        <form class="mt-3">
+                    <form class="mt-3">
+                        <div class="dataOverview mt-3">
+                            <h6 class="m-0">Add New Property</h6>
+                            <hr class="m-0 mt-3 mb-3">
                             <div class="row">
                                 <div class="col-md-4">
                                     <label class="form-label m-0 mb-1">Asset type</label>
@@ -81,28 +82,7 @@
                                     </select>
                                 </div>
                             </div>
-
-                            <hr class="m-0 mt-3 mb-3">
-                            <p>Add Contact Details</p>
-                            <div id="contactContainer">
-                                <div class="contact-row d-flex justify-content-between align-items-end gap-3 mb-3">
-                                    <div class="w-100">
-                                        <label for="nameInput-1" class="form-label mb-1">Contact Person Name</label>
-                                        <input type="text" class="form-control w-100" id="nameInput-1">
-                                    </div>
-                                    <div class="w-100">
-                                        <label for="numberInput-1" class="form-label mb-1">Contact Number</label>
-                                        <input type="text" class="form-control w-100" id="numberInput-1">
-                                    </div>
-                                    <button class="secondary-btn deleteBtn" style="padding: 12px 13px !important;"><i
-                                            class="bi bi-trash3"></i></button>
-                                </div>
-                            </div>
-
-                            <button type="button" class="secondary-btn addBtn" id="addNewBtn">+ Add New</button>
-
-                            <hr class="m-0 mt-3 mb-3">
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-md-4">
                                     <div class="mb-3" bis_skin_checked="1">
                                         <label for="date" class="form-label">Inspection Date & Time<span
@@ -179,8 +159,32 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr class="m-0 mt-3 mb-3">
+                        </div>
 
+                        <div class="dataOverview mt-3">
+                            <p>Contact Details</p>
+                            <hr class="m-0 mt-3 mb-3">
+                            <div id="contactContainer">
+                                <div class="contact-row d-flex justify-content-between align-items-end gap-3 mb-3">
+                                    <div class="w-100">
+                                        <label for="nameInput-1" class="form-label mb-1">Contact Person Name</label>
+                                        <input type="text" class="form-control w-100" id="nameInput-1">
+                                    </div>
+                                    <div class="w-100">
+                                        <label for="numberInput-1" class="form-label mb-1">Contact Number</label>
+                                        <input type="text" class="form-control w-100" id="numberInput-1">
+                                    </div>
+                                    <button class="secondary-btn deleteBtn" style="padding: 12px 13px !important;"><i
+                                            class="bi bi-trash3"></i></button>
+                                </div>
+                            </div>
+
+                            <button type="button" class="secondary-btn addBtn" id="addNewBtn">+ Add New</button>
+                        </div>
+
+                        <div class="dataOverview mt-3">
+                            <p>Other Details</p>
+                            <hr class="m-0 mt-3 mb-3">
                             <div id="documentContainer" class="mt-4">
                                 <div class="document-row d-flex justify-content-between align-items-end gap-3 mb-3">
                                     <div class="w-100">
@@ -199,7 +203,6 @@
                             <button type="button" class="secondary-btn addBtn" id="addDocumentBtn">+ Add New
                                 Document</button>
 
-                            <hr class="m-0 mt-3 mb-3">
 
                             <div class="mb-2 mt-3 w-100 d-flex justify-content-start" bis_skin_checked="1">
                                 <img src="../images/icon_placeholder_image.jpg" class="rounded" alt="">
@@ -215,10 +218,11 @@
                                 </div>
                             </div>
 
+                        </div>
+
+                        <div class="dataOverview mt-3">
+                            <p>Gallery</p>
                             <hr class="m-0 mt-3 mb-3">
-
-                            <p>Add Gallery</p>
-
                             <!-- GALLERY IMAGE UPLOAD SECTION -->
                             <div class="galleryContainer" id="galleryContainer">
                                 <div class="d-flex justify-content-start gallery-row mb-3">
@@ -250,8 +254,12 @@
 
                             <button type="button" class="secondary-btn addBtn" id="addGalleryBtn">+ Add New
                                 Image</button>
-                            <hr class="m-0 mt-3 mb-3">
+                        </div>
 
+
+                        <div class="dataOverview mt-3">
+                            <p>Address Details</p>
+                            <hr class="m-0 mt-3 mb-3">
                             <div class="mb-2 mt-3 w-100" bis_skin_checked="1">
                                 <label for="NameInput" class="form-label mb-1">Address</label>
                                 <textarea name="" id="" cols="30" rows="10" class="form-control w-100"></textarea>
@@ -288,32 +296,42 @@
                                 <div class="col-md-12">
                                     <div class="mb-3" bis_skin_checked="1">
                                         <label class="form-label m-0 mb-1">Location <span
-                                            class="xsmall text-muted">Google Map Link</span></label>
+                                                class="xsmall text-muted">Google
+                                                Map Link</span></label>
                                         <input type="text" class="form-control w-100" id="featuredAltInput-1">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3" bis_skin_checked="1">
                                         <label class="form-label m-0 mb-1">Description</label>
-                                        <textarea name="" id="" cols="30" rows="10" class="form-control w-100"></textarea>
+                                        <textarea name="" id="" cols="30" rows="10"
+                                            class="form-control w-100"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                                        <label class="form-check-label text-dark fs-6" for="switchCheckDefault">Promoted Property</label>
-                                      </div>
+                                        <input class="form-check-input" type="checkbox" role="switch"
+                                            id="switchCheckDefault">
+                                        <label class="form-check-label text-dark fs-6" for="switchCheckDefault">Promoted
+                                            Property</label>
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                                        <label class="form-check-label text-dark fs-6" for="switchCheckDefault">Featured Property</label>
-                                      </div>
+                                        <input class="form-check-input" type="checkbox" role="switch"
+                                            id="switchCheckDefault">
+                                        <label class="form-check-label text-dark fs-6" for="switchCheckDefault">Featured
+                                            Property</label>
+                                    </div>
                                 </div>
                             </div>
 
+                        </div>
+
+
+                        <div class="dataOverview mt-3">
+                            <p>Meta Details</p>
                             <hr class="m-0 mt-3 mb-3">
-                            <p>Add Contact Details</p>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="mb-1" bis_skin_checked="1">
@@ -344,11 +362,13 @@
                                         <img src="../images/icon_placeholder_image.jpg" class="rounded" alt="">
                                         <div class="w-100 ms-3" bis_skin_checked="1">
                                             <div bis_skin_checked="1">
-                                                <label for="uploadInput" class="form-label mb-1">Upload Featured Image</label>
+                                                <label for="uploadInput" class="form-label mb-1">Upload Featured
+                                                    Image</label>
                                                 <input type="file" class="form-control w-100" id="FileNumberInput">
                                             </div>
                                             <div bis_skin_checked="1">
-                                                <label for="uploadInput" class="form-label mb-1">Featured Image Alt</label>
+                                                <label for="uploadInput" class="form-label mb-1">Featured Image
+                                                    Alt</label>
                                                 <input type="text" class="form-control w-100" id="FileNumberInput">
                                             </div>
                                         </div>
@@ -357,26 +377,29 @@
                                 <div class="col-md-12">
                                     <div class="mb-3" bis_skin_checked="1">
                                         <label class="form-label m-0 mb-1">Header Code</label>
-                                        <textarea name="" id="" cols="30" rows="10" class="form-control w-100"></textarea>
+                                        <textarea name="" id="" cols="30" rows="10"
+                                            class="form-control w-100"></textarea>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-4 d-flex gap-3">
-                                <button class="btn primary-btn">Add Property</button>
-                                <button class="btn secondary-btn">Cancel</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
 
-
+                        <div class="my-4 d-flex gap-3">
+                            <button class="btn primary-btn">Add Property</button>
+                            <button class="btn secondary-btn">Cancel</button>
+                        </div>
+                    </form>
                 </div>
+
+
             </div>
         </div>
-        <footer>
-            <div class="footer">
-                <p class="m-0">Copyright © 2023 All rights reserved.</p>
-            </div>
-        </footer>
+    </div>
+    <footer>
+        <div class="footer">
+            <p class="m-0">Copyright © 2023 All rights reserved.</p>
+        </div>
+    </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- bootstrap JS -->
